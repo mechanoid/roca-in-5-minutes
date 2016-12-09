@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title New Creature
+body
+  h1 Create a new Creature
+
+  form(action="/creatures", method="POST")
+    input(type="text", name="name")
+    input(type="text", name="power")
+    button(type="submit") create

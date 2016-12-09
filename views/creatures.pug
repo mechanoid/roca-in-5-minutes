@@ -1,0 +1,13 @@
+extends layouts/base
+
+block content
+  h1 Magical Creatures
+
+  ul.creatures
+    if creatures
+      for creature in creatures
+        li
+          article.creature
+            h3= creature.name
+
+            p= `can use ${creature.power} to defeat its enemies`

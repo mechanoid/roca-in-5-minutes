@@ -1,0 +1,17 @@
+{
+  "name": "roca-in-5-minutes",
+  "version": "0.0.1",
+  "description": "a code generator that tries to explain ROCA frontend development",
+  "author": "Falk Hoppe <falkhoppe81@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "eslint": "3.11.1",
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta6",
+    "standard": "^8.6.0"
+  }
+}
