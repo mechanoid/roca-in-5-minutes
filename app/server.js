@@ -1,6 +1,6 @@
-const setup = require('./lib/setup')
+const setup = require('../lib/setup')
 const seeds = require('./seeds')
-const store = require('./lib/store')(seeds)
+const store = require('../lib/store')(seeds)
 
 const app = setup(store, { port: 3000 })
 
