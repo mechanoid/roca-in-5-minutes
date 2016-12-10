@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title ROCA in 5 minutes
+body
+  block content
+
+  script(src="systemjs/dist/system.js")
+  script.
+    /* global SystemJS */
+    'use strict'
+
+    SystemJS.config({
+      baseURL: '/',
+      map: {
+        'plugin-babel': 'systemjs-plugin-babel/plugin-babel.js',
+        'systemjs-babel-build': 'systemjs-plugin-babel/systemjs-babel-browser.js'
+      },
+      transpiler: 'plugin-babel',
+      meta: {
+        'scripts/*.js': {
+          loader: 'plugin-babel'
+        }
+      }
+    })
+
+    Promise.resolve(SystemJS)
+      .then(system =>
+        typeof Promise === 'function' ? system : system.import('bluebird/js/browser/bluebird.core.min.js'))
+      .then(system =>
+        typeof fetch === 'function' ? system : system.import('whatwg-fetch/fetch.js'))
+      .then(() => SystemJS.import('scripts/app.js'))
+      .then(app => app.default())
