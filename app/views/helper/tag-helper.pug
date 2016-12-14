@@ -1,0 +1,8 @@
+mixin form()
+  - const decoratedMethod = ['PUT', 'DELETE'].includes(attributes.method) ? attributes.method : null
+  - attributes.method = decoratedMethod ? 'POST' : attributes.method
+  form&attributes(attributes)
+    if decoratedMethod
+      input(type="hidden", name="_method", value=decoratedMethod)
+    if block
+      block

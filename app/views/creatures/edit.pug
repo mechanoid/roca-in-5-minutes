@@ -3,7 +3,7 @@ extends ../layouts/application
 block content
   h1 Edit #{creature.name}
 
-  form(action="/creatures/"+creature.name, method="POST")
+  +form(action="/creatures/"+creature.name, method="PUT")
     input(type="text", name="name" value=creature.name)
     input(type="text", name="power" value=creature.power)
     button(type="submit") update

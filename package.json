@@ -12,6 +12,7 @@
     "body-parser": "^1.15.2",
     "eslint": "3.11.1",
     "express": "^4.14.0",
+    "method-override": "^2.3.7",
     "pug": "^2.0.0-beta6",
     "standard": "^8.6.0",
     "systemjs": "^0.19.41",

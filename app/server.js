@@ -27,7 +27,7 @@ app.post('/creatures', (req, res) => {
   res.redirect('/creatures')
 })
 
-app.get('/creatures/:name', (req, res) => {
+app.get('/creatures/:name/edit', (req, res) => {
   const creature = store.creatures.find(c => hasSameName(c, req.params.name))
 
   if (creature) {
@@ -37,7 +37,7 @@ app.get('/creatures/:name', (req, res) => {
   res.render('404')
 })
 
-app.post('/creatures/:name', (req, res) => {
+app.put('/creatures/:name', (req, res) => {
   const index = store.creatures.findIndex(c => hasSameName(c, req.params.name))
 
   if (index >= 0) {
